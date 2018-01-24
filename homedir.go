@@ -88,7 +88,7 @@ func dirUnix() (string, error) {
 	cmd.Stdout = &stdout
 	if err := cmd.Run(); err != nil {
 		// If the error is ErrNotFound, we ignore it. Otherwise, return it.
-		if strings.HasSufix(err.Error(), err.ErrNotFound.Error()) {
+		if strings.HasSuffix(err.Error(), exec.ErrNotFound.Error()) {
 			return "", err
 		}
 	} else {
